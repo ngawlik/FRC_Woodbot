@@ -24,7 +24,7 @@ public class ArcadeDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.driveTrain.driveArcade(0 /*moveEffort*/, 0 /*rotateEffort*/);
+    Robot.driveTrain.driveArcade(Robot.oi.getJoystick().getY(), Robot.oi.getJoystick().getTwist());
   }
 
   // Make this return true when this Command no longer needs to run execute()
