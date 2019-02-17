@@ -10,13 +10,10 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-/**
- * An example command.  You can replace me with your own command.
- */
-public class ExampleCommand extends Command {
-  public ExampleCommand() {
+public class ArcadeDrive extends Command {
+  public ArcadeDrive() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.m_subsystem);
+    requires(Robot.driveTrain);
   }
 
   // Called just before this Command runs the first time
@@ -27,6 +24,7 @@ public class ExampleCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    Robot.driveTrain.driveArcade(0 /*moveEffort*/, 0 /*rotateEffort*/);
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -44,5 +42,6 @@ public class ExampleCommand extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    Robot.driveTrain.driveArcade(0, 0);
   }
 }
